@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Site Metas -->
-    <title>ราคากลาง</title>
+    <title>ประกาศจัดซื้อจัดจ้าง</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -47,16 +47,6 @@ if (!isset($_SESSION['us_email'])) {
     exit();
 } else {
 
-    $sql= "SELECT * FROM public_relations";
-    $query = mysqli_query($conn, $sql);
-$perpage = 5;
-if (isset($_GET['page'])) {
-	$page = $_GET['page'];
-} else {
-	$page = 1;
-}
-$start = ($page - 1) * $perpage;
-
 ?>
 
 
@@ -73,23 +63,23 @@ $start = ($page - 1) * $perpage;
                                 <div class="col-lg-12">
                                     <!-- <div class="m"> -->
                                     <div class="heading-title text-center">
-                                        <h2>ราคากลาง</h2>
+                                        <h2>ประกาศจัดซื้อจัดจ้าง</h2>
                                         <h3>Using CSS to style an HTML Form</h3>
                                     </div>
                                     <div>
                                         <form class="box" enctype="multipart/form-data" method="post"
-                                            action="../save_to_database/middle_price.php">
+                                            action="../save_to_database/announce.php">
                                             <label for="fname">เรื่อง</label>
-                                            <input type="text" id="fname" name="mid_topic" placeholder="เรื่อง..">
+                                            <input type="text" id="fname" name="ann_topic" placeholder="เรื่อง..">
 
                                             <label for="lname">วันที่</label>
                                             <input type="date" value="<?php echo date('Y-m-d', strtotime("now")) ?>"
-                                                id="lname" name="mid_date" placeholder="dd-mm-yyyy">
+                                                id="lname" name="ann_date" placeholder="dd-mm-yyyy">
 
                                             <label for="lname">ไฟล์</label>
-                                            <input type="file" name="mid_file">
+                                            <input type="file" name="ann_file">
 
-                                            <input type="submit" value="Submit" name="middle_price">
+                                            <input type="submit" value="Submit" name="announce">
                                         </form>
 
 

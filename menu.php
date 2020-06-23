@@ -68,7 +68,7 @@ session_start();
     <header class="top-navbar">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
-                <a class="navbar-brand" href="http://localhost/hospital/project/index.php">
+                <a class="navbar-brand" href="http://localhost/project/banana/index.php">
                     <img src="images/logo.png" alt="text" />
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food"
@@ -77,7 +77,7 @@ session_start();
                 </button>
                 <div class="collapse navbar-collapse" id="navbars-rs-food">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item "><a class="nav-link" href="http://localhost/hospital/project/index.php">หน้าแรก</a></li>
+                        <li class="nav-item "><a class="nav-link" href="http://localhost/project/banana/index.php">หน้าแรก</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown-a"
                                 data-toggle="dropdown">เกี่ยวกับโรงพยาบาล</a>
@@ -124,16 +124,16 @@ session_start();
                                 <li><a class="dropdown-item dropdown-toggle" href="#"> ประกาศ และร่าง </a>
                                     <ul class="submenu dropdown-menu">
                                         <?php if (isset($_SESSION['us_email'])) { ?>
-                                        <li><a class="dropdown-item" href="http://localhost/hospital/project/form/form_Middle_price.php">ราคากลาง</a></li>
-                                        <li><a class="dropdown-item" href="">ประกาศจัดซื้อจัดจ้าง</a></li>
+                                        <li><a class="dropdown-item" href="http://localhost/project/banana/form/form_Middle_price.php">ราคากลาง</a></li>
+                                        <li><a class="dropdown-item" href="http://localhost/project/banana/form/form_announce.php">ประกาศจัดซื้อจัดจ้าง</a></li>
                                         <li><a class="dropdown-item" href="">ผลการจัดซื้อจัดจ้าง</a></li>
                                         <li><a class="dropdown-item" href="">ประกาศแผนการจัดซื้อจัดจ้าง</a></li>
                                         <li><a class="dropdown-item" href="">สรุปการจัดซื้อจัดจ้าง</a></li>
                                         <?php }
                                         else if (!isset($_SESSION['us_email'])) { ?>
 
-                                        <li><a class="dropdown-item" href="http://localhost/hospital/project/display/middle_price.php">ราคากลาง</a></li>
-                                        <li><a class="dropdown-item" href="">ประกาศจัดซื้อจัดจ้าง</a></li>
+                                        <li><a class="dropdown-item" href="http://localhost/project/banana/display/middle_price.php">ราคากลาง</a></li>
+                                        <li><a class="dropdown-item" href="http://localhost/project/banana/display/middle_price.php">ประกาศจัดซื้อจัดจ้าง</a></li>
                                         <li><a class="dropdown-item" href="">ผลการจัดซื้อจัดจ้าง</a></li>
                                         <li><a class="dropdown-item" href="">ประกาศแผนการจัดซื้อจัดจ้าง</a></li>
                                         <li><a class="dropdown-item" href="">สรุปการจัดซื้อจัดจ้าง</a></li>
@@ -180,13 +180,13 @@ session_start();
                     <a class="nav-link dropdown-toggle" href="#" id="dropdown-a"
                         data-toggle="dropdown"><?php echo $row['us_email']?></a>
                     <div class="dropdown-menu" aria-labelledby="dropdown-a">
-                        <a class="dropdown-item" href="http://localhost/hospital/project/logout/logout.php">ออกจากระบบ</a>
+                        <a class="dropdown-item" href="http://localhost/project/banana/logout/logout.php">ออกจากระบบ</a>
 
                         <?php
     }
     if(!isset($_SESSION['us_email'])) {
     ?>
-                <li class="nav-item"><a class="nav-link" href="http://localhost/hospital/project/login/index.php">เข้าสู่ระบบ</a></li>
+                <li class="nav-item"><a class="nav-link" href="http://localhost/project/banana/login/index.php">เข้าสู่ระบบ</a></li>
                 <?php
     }
     ?>

@@ -2,7 +2,6 @@
 include('../config.php');
 session_start();
 
-$mid_id = 1;
 
 if (isset($_POST['middle_price'])); {
 
@@ -27,3 +26,5 @@ $mid_file=$name.$file["name"];
                         echo "<script>";
                 } 
         }
+
+ ?>

@@ -32,14 +32,16 @@
                                 </p>
                             </div>
                         </div>
+                        <a  href="http://localhost/project/banana/maps.php" >
                         <div class="col-md-4">
                             <i class="fa fa-map-marker"></i>
                             <div class="overflow-hidden">
+                            
                                 <h4>Location</h4>
                                 <p class="lead">
-                                    800, Lorem Street, US
+                                โรงพยาบาลปะนาเระ
                                 </p>
-                            </div>
+                            </div></a>
                         </div>
                     </div>
                 </div>

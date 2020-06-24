@@ -50,6 +50,7 @@ $query = mysqli_query($conn, $sql);
 
         <article>
             <!-- Start slides -->
+
             <div id="slides" class="cover-slides">
                 <ul class="slides-container">
                     <li class="text-center">

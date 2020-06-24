@@ -1,6 +1,6 @@
 <?php
 include('../config.php');
-$sql= "SELECT * FROM public_relations";
+$sql= "SELECT * FROM plan";
 $query = mysqli_query($conn, $sql);
 
 
@@ -24,7 +24,7 @@ $start = ($page - 1) * $perpage;
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Site Metas -->
-    <title>ข่าวประชาสัมพันธ์</title>
+    <title>ประกาศแผนการจัดซื้อจัดจ้าง</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -65,7 +65,7 @@ $start = ($page - 1) * $perpage;
                 <div class="row">
                         <div class="col-lg-12">
                             <div class="heading-title text-center">
-                                <h2>ข่าวประชาสัมพันธ์</h2>
+                                <h2>ประกาศแผนการจัดซื้อจัดจ้าง</h2>
                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
                             </div>
                         </div>
@@ -88,13 +88,13 @@ $start = ($page - 1) * $perpage;
 
 											?>
                                 <tr>
-                                    <td class="column1"><?php echo $fetch['pu_id'] ?></td>
-                                    <td class="column2"><?php echo $fetch['pu_topic'] ?></td>
-                                    <td class="column3"><?php echo $fetch['pu_date'] ?></td>
+                                    <td class="column1"><?php echo $fetch['pla_id'] ?></td>
+                                    <td class="column2"><?php echo $fetch['pla_topic'] ?></td>
+                                    <td class="column3"><?php echo $fetch['pla_date'] ?></td>
                                     <td class="column4">
-                                    <?php $files=$fetch['pu_file']; ?>
-                                    <a download="<?php echo $files ?>" href="uploads/<?php echo $files ?>">
-                                             <?php echo $fetch['pu_file'] ?>
+                                    <?php $files=$fetch['pla_file']; ?>
+                                    <a download="<?php echo $files ?>" href="../uploads/uploads_plan/<?php echo $files ?>">
+                                             <?php echo $fetch['pla_file'] ?>
                                             </td>
                                     
 
@@ -109,7 +109,7 @@ $start = ($page - 1) * $perpage;
                         </table>
 
                         <?php
-								$sql2 = "select * from public_relations ";
+								$sql2 = "select * from plan ";
 								$query2 = mysqli_query($conn, $sql2);
 								$total_record = mysqli_num_rows($query2);
 								$total_page = ceil($total_record / $perpage);
@@ -118,15 +118,15 @@ $start = ($page - 1) * $perpage;
 								<nav>
 									<ul class="pagination">
 										<li>
-											<a href="another.php?page=1" aria-label="Previous">
+											<a href="plan.php?page=1" aria-label="Previous">
 												<span aria-hidden="true">&laquo;</span>
 											</a>
 										</li>
 										<?php for ($i = 1; $i <= $total_page; $i++) { ?>
-											<li><a href="another.php?page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+											<li><a href="plan.php?page=<?php echo $i; ?>"><?php echo $i; ?></a></li>
 										<?php } ?>
 										<li>
-											<a href="another.php?page=<?php echo $total_page; ?>" aria-label="Next">
+											<a href="plan.php?page=<?php echo $total_page; ?>" aria-label="Next">
 												<span aria-hidden="true">&raquo;</span>
 											</a>
 										</li>
@@ -141,8 +141,7 @@ $start = ($page - 1) * $perpage;
             </div>
             <!-- End About -->
 
-             
-        </article>
+            </article>
     </div>
     <nav>
 <?php include '../lower.php' ?>

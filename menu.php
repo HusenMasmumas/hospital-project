@@ -126,31 +126,43 @@ session_start();
                                         <?php if (isset($_SESSION['us_email'])) { ?>
                                         <li><a class="dropdown-item" href="http://localhost/project/banana/form/form_Middle_price.php">ราคากลาง</a></li>
                                         <li><a class="dropdown-item" href="http://localhost/project/banana/form/form_announce.php">ประกาศจัดซื้อจัดจ้าง</a></li>
-                                        <li><a class="dropdown-item" href="">ผลการจัดซื้อจัดจ้าง</a></li>
-                                        <li><a class="dropdown-item" href="">ประกาศแผนการจัดซื้อจัดจ้าง</a></li>
-                                        <li><a class="dropdown-item" href="">สรุปการจัดซื้อจัดจ้าง</a></li>
+                                        <li><a class="dropdown-item" href="http://localhost/project/banana/form/form_results.php">ผลการจัดซื้อจัดจ้าง</a></li>
+                                        <li><a class="dropdown-item" href="http://localhost/project/banana/form/form_plan.php">ประกาศแผนการจัดซื้อจัดจ้าง</a></li>
+                                        <li><a class="dropdown-item" href="http://localhost/project/banana/form/form_conclude.php">สรุปผลการจัดซื้อจัดจ้าง</a></li>
                                         <?php }
                                         else if (!isset($_SESSION['us_email'])) { ?>
 
                                         <li><a class="dropdown-item" href="http://localhost/project/banana/display/middle_price.php">ราคากลาง</a></li>
-                                        <li><a class="dropdown-item" href="http://localhost/project/banana/display/middle_price.php">ประกาศจัดซื้อจัดจ้าง</a></li>
-                                        <li><a class="dropdown-item" href="">ผลการจัดซื้อจัดจ้าง</a></li>
-                                        <li><a class="dropdown-item" href="">ประกาศแผนการจัดซื้อจัดจ้าง</a></li>
-                                        <li><a class="dropdown-item" href="">สรุปการจัดซื้อจัดจ้าง</a></li>
+                                        <li><a class="dropdown-item" href="http://localhost/project/banana/display/announce.php">ประกาศจัดซื้อจัดจ้าง</a></li>
+                                        <li><a class="dropdown-item" href="http://localhost/project/banana/display/results.php">ผลการจัดซื้อจัดจ้าง</a></li>
+                                        <li><a class="dropdown-item" href="http://localhost/project/banana/display/plan.php">ประกาศแผนการจัดซื้อจัดจ้าง</a></li>
+                                        <li><a class="dropdown-item" href="http://localhost/project/banana/display/conclude.php">สรุปผลการจัดซื้อจัดจ้าง</a></li>
                                         <?php } ?>
                                     </ul>
                                 </li>
                                 <li><a class="dropdown-item dropdown-toggle" href="#">
                                         กฏระเบียบที่เกี่ยวข้องกับการจัดซื้อจัดจ้าง </a>
                                     <ul class="submenu dropdown-menu">
-                                        <li><a class="dropdown-item" href="">พระราขบัญญัติการจัดซื้อจัดจ้าง</a></li>
-                                        <li><a class="dropdown-item" href="">ระเบียบกระทรวงการคลัง</a></li>
-                                        <li><a class="dropdown-item" href="">กฏกระทรวง</a></li>
-                                        <li><a class="dropdown-item" href="">ประกาศ</a></li>
-                                        <li><a class="dropdown-item" href="">หนังสือเรียน / แนวทางการปฏิบัติ</a></li>
+                                    <?php if (isset($_SESSION['us_email'])) { ?>
+                                        <li><a class="dropdown-item" href="http://localhost/project/banana/form/form_commandments.php">พระราขบัญญัติการจัดซื้อจัดจ้าง</a></li>
+                                        <li><a class="dropdown-item" href="http://localhost/project/banana/form/form_ministry_regulations.php">ระเบียบกระทรวงการคลัง</a></li>
+                                        <li><a class="dropdown-item" href="http://localhost/project/banana/form/form_rule.php">กฏกระทรวง</a></li>
+                                        <li><a class="dropdown-item" href="http://localhost/project/banana/form/form_inform.php">ประกาศ</a></li>
+                                        <li><a class="dropdown-item" href="http://localhost/project/banana/form/form_book.php">หนังสือเรียน / แนวทางการปฏิบัติ</a></li>
                                         <li><a class="dropdown-item"
-                                                href="">โครงสร้างผู้รับผิดชอบในกการจัดซื้อจัดจ้างของ
+                                                href="http://localhost/project/banana/form/form_structure.php">โครงสร้างผู้รับผิดชอบในการจัดซื้อจัดจ้างของ
                                                 สปสช.</a></li>
+                                                <?php }
+                                        else if (!isset($_SESSION['us_email'])) { ?>
+                                         <li><a class="dropdown-item" href="http://localhost/project/banana/display/commandments.php">พระราชบัญญัติการจัดซื้อจัดจ้าง</a></li>
+                                        <li><a class="dropdown-item" href="http://localhost/project/banana/display/ministry_regulations.php">ระเบียบกระทรวงการคลัง</a></li>
+                                        <li><a class="dropdown-item" href="http://localhost/project/banana/display/rule.php">กฏกระทรวง</a></li>
+                                        <li><a class="dropdown-item" href="http://localhost/project/banana/display/inform.php">ประกาศ</a></li>
+                                        <li><a class="dropdown-item" href="http://localhost/project/banana/display/book.php">หนังสือเรียน / แนวทางการปฏิบัติ</a></li>
+                                        <li><a class="dropdown-item"
+                                                href="http://localhost/project/banana/display/structure.php">โครงสร้างผู้รับผิดชอบในการจัดซื้อจัดจ้างของ
+                                                สปสช.</a></li>
+                                        <?php } ?>
                                     </ul>
                                 </li>
 

@@ -236,7 +236,7 @@ input[type="date"]::-webkit-datetime-edit-day-field{
   /* ------------------------------------date-------------------------------------- */
   
 }
-.box input[type = "text"],.box input[type = "date"],.box input[type = "file"]{
+.box input[type = "text"],.box input[type = "date"],.box input[type = "file"], .form-control1{
   border:0;
   background: none;
   display: block;
@@ -250,7 +250,7 @@ input[type="date"]::-webkit-datetime-edit-day-field{
   border-radius: 24px;
   transition: 0.25s;
 }
-.box input[type = "text"]:focus,.box input[type = "date"]:focus,.box input[type = "file"]:focus{
+.box input[type = "text"]:focus,.box input[type = "date"]:focus,.box input[type = "file"]:focus,.form-control1:focus{
   width: 100%;
   border-color: #cc752e;
 }

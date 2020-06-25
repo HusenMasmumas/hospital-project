@@ -84,7 +84,7 @@ $query = mysqli_query($conn, $sql);
             'อำเภอปะนาเระ จังหวัดปัตตานี ห่างจากที่ว่าการอำเภอปะนาเระ '+
             'ประมาณ 3 กิโลเมตร มีเนื้อที่ทั้งหมด 49 ไร่ 2 งาน ดำเนินงานก่อสร้างแล้วเสร็จในปี พ.ศ.2522  '+
             '</p>'+
-            '<p>Attribution: Uluru, <a href="https://www.google.com/maps/place/%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%9B%E0%B8%B0%E0%B8%99%E0%B8%B2%E0%B9%80%E0%B8%A3%E0%B8%B0%E2%80%8B/@6.8400694,101.4861527,15z/data=!4m2!3m1!1s0x0:0x1cba85d714c197b0?sa=X&ved=2ahUKEwiHj735xJrqAhUJzzgGHTD_CJQQ_BIwCnoECBIQCA">'+
+            '<p>URL : <a href="https://www.google.com/maps/place/%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B8%9E%E0%B8%A2%E0%B8%B2%E0%B8%9A%E0%B8%B2%E0%B8%A5%E0%B8%9B%E0%B8%B0%E0%B8%99%E0%B8%B2%E0%B9%80%E0%B8%A3%E0%B8%B0%E2%80%8B/@6.8400694,101.4861527,15z/data=!4m2!3m1!1s0x0:0x1cba85d714c197b0?sa=X&ved=2ahUKEwiHj735xJrqAhUJzzgGHTD_CJQQ_BIwCnoECBIQCA">'+
             'https://www.google.com/maps</a> '+
             '</p>'+
             '</div>'+
@@ -106,7 +106,7 @@ $query = mysqli_query($conn, $sql);
       }
     </script>
     <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQZ4NeIjWNkDiygDt0E7nvF-shQT2SwyY&callback=initMap">
     </script>
 </div>
 

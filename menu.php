@@ -77,7 +77,7 @@ session_start();
                 </button>
                 <div class="collapse navbar-collapse" id="navbars-rs-food">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item "><a class="nav-link" href="http://localhost/project/banana/index.php">หน้าแรก</a></li>
+                        <li class="nav-item  "><a class="nav-link" href="http://localhost/project/banana/index.php">หน้าแรก</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown-a"
                                 data-toggle="dropdown">เกี่ยวกับโรงพยาบาล</a>
@@ -170,7 +170,7 @@ session_start();
                         </li>
 
 
-                </div>
+                
 
 
 
@@ -202,7 +202,7 @@ session_start();
                 <?php
     }
     ?>
-
+</div>
             </div>
 
             </ul>

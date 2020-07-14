@@ -95,9 +95,17 @@ session_start();
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown-a"
                                 data-toggle="dropdown">ประชาสัมพันธ์</a>
                             <div class="dropdown-menu" aria-labelledby="dropdown-a">
-                                <a class="dropdown-item" href="new1.html">ข่าวสารประชาสัมพันธ์</a>
-                                <a class="dropdown-item" href="new2.html">วาระการประชุม</a>
-                                <a class="dropdown-item" href="new3.html">การรับสมัครงาน</a>
+                                <?php if (isset($_SESSION['us_email'])) { ?>
+                                <a class="dropdown-item" href="http://localhost/project/banana/form/form_public_relations.php">ข่าวสารประชาสัมพันธ์</a>
+                                <a class="dropdown-item" href="http://localhost/project/banana/form/form_the_agenda.php">วาระการประชุม</a>
+                                <a class="dropdown-item" href="http://localhost/project/banana/form/form_recruitment.php">การรับสมัครงาน</a>
+                                <?php }
+                                        else if (!isset($_SESSION['us_email'])) { ?>
+                                        <a class="dropdown-item" href="http://localhost/project/banana/display/public_relations.php">ข่าวสารประชาสัมพันธ์</a>
+                                <a class="dropdown-item" href="http://localhost/project/banana/display/the_agenda.php">วาระการประชุม</a>
+                                <a class="dropdown-item" href="http://localhost/project/banana/display/recruitment.php">การรับสมัครงาน</a>
+
+                                <?php } ?>
 
                             </div>
 
@@ -105,14 +113,20 @@ session_start();
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">ITA</a>
                             <div class="dropdown-menu" aria-labelledby="dropdown-a">
                                 <?php if (isset($_SESSION['us_email'])) { ?>
-                                <a class="dropdown-item" href="http://localhost/project/banana/form/form_ITA61.php">ITA61</a>
-                                <a class="dropdown-item" href="http://localhost/project/banana/form/form_ITA62.php">ITA62</a>
-                                <a class="dropdown-item" href="http://localhost/project/banana/form/form_ITA63.php">ITA63</a>
+                                <a class="dropdown-item"
+                                    href="http://localhost/project/banana/form/form_ITA61.php">ITA61</a>
+                                <a class="dropdown-item"
+                                    href="http://localhost/project/banana/form/form_ITA62.php">ITA62</a>
+                                <a class="dropdown-item"
+                                    href="http://localhost/project/banana/form/form_ITA63.php">ITA63</a>
                                 <?php }
                                         else if (!isset($_SESSION['us_email'])) { ?>
-                                <a class="dropdown-item" href="http://localhost/project/banana/display/ITA61.php">ITA61</a>
-                                <a class="dropdown-item" href="http://localhost/project/banana/display/ITA62.php">ITA62</a>
-                                <a class="dropdown-item" href="http://localhost/project/banana/display/ITA63.php">ITA63</a>
+                                <a class="dropdown-item"
+                                    href="http://localhost/project/banana/display/ITA61.php">ITA61</a>
+                                <a class="dropdown-item"
+                                    href="http://localhost/project/banana/display/ITA62.php">ITA62</a>
+                                <a class="dropdown-item"
+                                    href="http://localhost/project/banana/display/ITA63.php">ITA63</a>
                                 <?php } ?>
 
                             </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 14, 2020 at 03:47 PM
+-- Generation Time: Jul 14, 2020 at 06:33 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.3.18
 
@@ -81,7 +81,8 @@ CREATE TABLE `commandments` (
 --
 
 INSERT INTO `commandments` (`com_id`, `com_topic`, `com_date`, `com_file`) VALUES
-(1, 'aaa', '2020-06-24', '1592968771rao2010.pdf');
+(1, 'aaa', '2020-06-24', '1592968771rao2010.pdf'),
+(2, 'aaa', '2020-07-14', '15947405501212.txt');
 
 -- --------------------------------------------------------
 
@@ -272,6 +273,26 @@ INSERT INTO `public_relations` (`pu_id`, `pu_topic`, `pu_image`, `pu_file`, `pu_
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `recruitment`
+--
+
+CREATE TABLE `recruitment` (
+  `rec_id` int(11) NOT NULL,
+  `rec_topic` varchar(150) COLLATE utf8_thai_520_w2 DEFAULT NULL,
+  `rec_date` date DEFAULT NULL,
+  `rec_file` varchar(150) COLLATE utf8_thai_520_w2 DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_thai_520_w2;
+
+--
+-- Dumping data for table `recruitment`
+--
+
+INSERT INTO `recruitment` (`rec_id`, `rec_topic`, `rec_date`, `rec_file`) VALUES
+(1, 'aaa12', '2020-07-14', '15947442481212.txt');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `results`
 --
 
@@ -328,6 +349,26 @@ CREATE TABLE `structure` (
 
 INSERT INTO `structure` (`str_id`, `str_topic`, `str_date`, `str_file`) VALUES
 (1, 'aaa', '2020-06-24', '1592972930rao2010.pdf');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `the_agenda`
+--
+
+CREATE TABLE `the_agenda` (
+  `the_id` int(11) NOT NULL,
+  `the_topic` varchar(150) COLLATE utf8_thai_520_w2 DEFAULT NULL,
+  `the_date` date DEFAULT NULL,
+  `the_file` varchar(150) COLLATE utf8_thai_520_w2 DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_thai_520_w2;
+
+--
+-- Dumping data for table `the_agenda`
+--
+
+INSERT INTO `the_agenda` (`the_id`, `the_topic`, `the_date`, `the_file`) VALUES
+(1, 'aaa', '2020-07-14', '15947442351212.txt');
 
 -- --------------------------------------------------------
 
@@ -426,6 +467,12 @@ ALTER TABLE `public_relations`
   ADD PRIMARY KEY (`pu_id`);
 
 --
+-- Indexes for table `recruitment`
+--
+ALTER TABLE `recruitment`
+  ADD PRIMARY KEY (`rec_id`);
+
+--
 -- Indexes for table `results`
 --
 ALTER TABLE `results`
@@ -442,6 +489,12 @@ ALTER TABLE `rule`
 --
 ALTER TABLE `structure`
   ADD PRIMARY KEY (`str_id`);
+
+--
+-- Indexes for table `the_agenda`
+--
+ALTER TABLE `the_agenda`
+  ADD PRIMARY KEY (`the_id`);
 
 --
 -- Indexes for table `user`
@@ -469,7 +522,7 @@ ALTER TABLE `book`
 -- AUTO_INCREMENT for table `commandments`
 --
 ALTER TABLE `commandments`
-  MODIFY `com_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'รหัสพระราขบัญญัติการจัดซื้อจัดจ้าง', AUTO_INCREMENT=2;
+  MODIFY `com_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'รหัสพระราขบัญญัติการจัดซื้อจัดจ้าง', AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `conclude`
@@ -526,6 +579,12 @@ ALTER TABLE `public_relations`
   MODIFY `pu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `recruitment`
+--
+ALTER TABLE `recruitment`
+  MODIFY `rec_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `results`
 --
 ALTER TABLE `results`
@@ -542,6 +601,12 @@ ALTER TABLE `rule`
 --
 ALTER TABLE `structure`
   MODIFY `str_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'รหัสโครงสร้างผู้รับผิดชอบในการจัดซื้อจัดจ้างของ\r\n                                                สปสช.', AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `the_agenda`
+--
+ALTER TABLE `the_agenda`
+  MODIFY `the_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `user`

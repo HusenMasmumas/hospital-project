@@ -5,8 +5,7 @@ $("#contactForm").validator().on("submit", function (event) {
         submitMSG(false, "Did you fill in the form properly?");
     } else {
         // everything looks good!
-        event.preventDefault();
-        submitForm();
+   
     }
 });
 

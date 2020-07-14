@@ -77,7 +77,8 @@ session_start();
                 </button>
                 <div class="collapse navbar-collapse" id="navbars-rs-food">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item  "><a class="nav-link" href="http://localhost/project/banana/index.php">หน้าแรก</a></li>
+                        <li class="nav-item  "><a class="nav-link"
+                                href="http://localhost/project/banana/index.php">หน้าแรก</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown-a"
                                 data-toggle="dropdown">เกี่ยวกับโรงพยาบาล</a>
@@ -103,9 +104,16 @@ session_start();
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">ITA</a>
                             <div class="dropdown-menu" aria-labelledby="dropdown-a">
-                                <a class="dropdown-item" href="ITA1.html">ITA61</a>
-                                <a class="dropdown-item" href="ITA2.html">ITA62</a>
-                                <a class="dropdown-item" href="ITA3.html">ITA63</a>
+                                <?php if (isset($_SESSION['us_email'])) { ?>
+                                <a class="dropdown-item" href="http://localhost/project/banana/form/form_ITA61.php">ITA61</a>
+                                <a class="dropdown-item" href="http://localhost/project/banana/form/form_ITA62.php">ITA62</a>
+                                <a class="dropdown-item" href="http://localhost/project/banana/form/form_ITA63.php">ITA63</a>
+                                <?php }
+                                        else if (!isset($_SESSION['us_email'])) { ?>
+                                <a class="dropdown-item" href="http://localhost/project/banana/display/ITA61.php">ITA61</a>
+                                <a class="dropdown-item" href="http://localhost/project/banana/display/ITA62.php">ITA62</a>
+                                <a class="dropdown-item" href="http://localhost/project/banana/display/ITA63.php">ITA63</a>
+                                <?php } ?>
 
                             </div>
 
@@ -117,48 +125,88 @@ session_start();
 
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> จัดซื้อจัดจ้าง </a> 
-                            
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> จัดซื้อจัดจ้าง </a>
+
                             <ul class="submenu1 dropdown-menu">
-                           
+
                                 <li><a class="dropdown-item dropdown-toggle" href="#"> ประกาศ และร่าง </a>
                                     <ul class="submenu dropdown-menu">
                                         <?php if (isset($_SESSION['us_email'])) { ?>
-                                        <li><a class="dropdown-item" href="http://localhost/project/banana/form/form_Middle_price.php">ราคากลาง</a></li>
-                                        <li><a class="dropdown-item" href="http://localhost/project/banana/form/form_announce.php">ประกาศจัดซื้อจัดจ้าง</a></li>
-                                        <li><a class="dropdown-item" href="http://localhost/project/banana/form/form_results.php">ผลการจัดซื้อจัดจ้าง</a></li>
-                                        <li><a class="dropdown-item" href="http://localhost/project/banana/form/form_plan.php">ประกาศแผนการจัดซื้อจัดจ้าง</a></li>
-                                        <li><a class="dropdown-item" href="http://localhost/project/banana/form/form_conclude.php">สรุปผลการจัดซื้อจัดจ้าง</a></li>
+                                        <li><a class="dropdown-item"
+                                                href="http://localhost/project/banana/form/form_Middle_price.php">ราคากลาง</a>
+                                        </li>
+                                        <li><a class="dropdown-item"
+                                                href="http://localhost/project/banana/form/form_announce.php">ประกาศจัดซื้อจัดจ้าง</a>
+                                        </li>
+                                        <li><a class="dropdown-item"
+                                                href="http://localhost/project/banana/form/form_results.php">ผลการจัดซื้อจัดจ้าง</a>
+                                        </li>
+                                        <li><a class="dropdown-item"
+                                                href="http://localhost/project/banana/form/form_plan.php">ประกาศแผนการจัดซื้อจัดจ้าง</a>
+                                        </li>
+                                        <li><a class="dropdown-item"
+                                                href="http://localhost/project/banana/form/form_conclude.php">สรุปผลการจัดซื้อจัดจ้าง</a>
+                                        </li>
                                         <?php }
                                         else if (!isset($_SESSION['us_email'])) { ?>
 
-                                        <li><a class="dropdown-item" href="http://localhost/project/banana/display/middle_price.php">ราคากลาง</a></li>
-                                        <li><a class="dropdown-item" href="http://localhost/project/banana/display/announce.php">ประกาศจัดซื้อจัดจ้าง</a></li>
-                                        <li><a class="dropdown-item" href="http://localhost/project/banana/display/results.php">ผลการจัดซื้อจัดจ้าง</a></li>
-                                        <li><a class="dropdown-item" href="http://localhost/project/banana/display/plan.php">ประกาศแผนการจัดซื้อจัดจ้าง</a></li>
-                                        <li><a class="dropdown-item" href="http://localhost/project/banana/display/conclude.php">สรุปผลการจัดซื้อจัดจ้าง</a></li>
+                                        <li><a class="dropdown-item"
+                                                href="http://localhost/project/banana/display/middle_price.php">ราคากลาง</a>
+                                        </li>
+                                        <li><a class="dropdown-item"
+                                                href="http://localhost/project/banana/display/announce.php">ประกาศจัดซื้อจัดจ้าง</a>
+                                        </li>
+                                        <li><a class="dropdown-item"
+                                                href="http://localhost/project/banana/display/results.php">ผลการจัดซื้อจัดจ้าง</a>
+                                        </li>
+                                        <li><a class="dropdown-item"
+                                                href="http://localhost/project/banana/display/plan.php">ประกาศแผนการจัดซื้อจัดจ้าง</a>
+                                        </li>
+                                        <li><a class="dropdown-item"
+                                                href="http://localhost/project/banana/display/conclude.php">สรุปผลการจัดซื้อจัดจ้าง</a>
+                                        </li>
                                         <?php } ?>
                                     </ul>
                                 </li>
                                 <li><a class="dropdown-item dropdown-toggle" href="#">
                                         กฏระเบียบที่เกี่ยวข้องกับการจัดซื้อจัดจ้าง </a>
                                     <ul class="submenu dropdown-menu">
-                                    <?php if (isset($_SESSION['us_email'])) { ?>
-                                        <li><a class="dropdown-item" href="http://localhost/project/banana/form/form_commandments.php">พระราขบัญญัติการจัดซื้อจัดจ้าง</a></li>
-                                        <li><a class="dropdown-item" href="http://localhost/project/banana/form/form_ministry_regulations.php">ระเบียบกระทรวงการคลัง</a></li>
-                                        <li><a class="dropdown-item" href="http://localhost/project/banana/form/form_rule.php">กฏกระทรวง</a></li>
-                                        <li><a class="dropdown-item" href="http://localhost/project/banana/form/form_inform.php">ประกาศ</a></li>
-                                        <li><a class="dropdown-item" href="http://localhost/project/banana/form/form_book.php">หนังสือเรียน / แนวทางการปฏิบัติ</a></li>
+                                        <?php if (isset($_SESSION['us_email'])) { ?>
+                                        <li><a class="dropdown-item"
+                                                href="http://localhost/project/banana/form/form_commandments.php">พระราขบัญญัติการจัดซื้อจัดจ้าง</a>
+                                        </li>
+                                        <li><a class="dropdown-item"
+                                                href="http://localhost/project/banana/form/form_ministry_regulations.php">ระเบียบกระทรวงการคลัง</a>
+                                        </li>
+                                        <li><a class="dropdown-item"
+                                                href="http://localhost/project/banana/form/form_rule.php">กฏกระทรวง</a>
+                                        </li>
+                                        <li><a class="dropdown-item"
+                                                href="http://localhost/project/banana/form/form_inform.php">ประกาศ</a>
+                                        </li>
+                                        <li><a class="dropdown-item"
+                                                href="http://localhost/project/banana/form/form_book.php">หนังสือเรียน /
+                                                แนวทางการปฏิบัติ</a></li>
                                         <li><a class="dropdown-item"
                                                 href="http://localhost/project/banana/form/form_structure.php">โครงสร้างผู้รับผิดชอบในการจัดซื้อจัดจ้างของ
                                                 สปสช.</a></li>
-                                                <?php }
+                                        <?php }
                                         else if (!isset($_SESSION['us_email'])) { ?>
-                                         <li><a class="dropdown-item" href="http://localhost/project/banana/display/commandments.php">พระราชบัญญัติการจัดซื้อจัดจ้าง</a></li>
-                                        <li><a class="dropdown-item" href="http://localhost/project/banana/display/ministry_regulations.php">ระเบียบกระทรวงการคลัง</a></li>
-                                        <li><a class="dropdown-item" href="http://localhost/project/banana/display/rule.php">กฏกระทรวง</a></li>
-                                        <li><a class="dropdown-item" href="http://localhost/project/banana/display/inform.php">ประกาศ</a></li>
-                                        <li><a class="dropdown-item" href="http://localhost/project/banana/display/book.php">หนังสือเรียน / แนวทางการปฏิบัติ</a></li>
+                                        <li><a class="dropdown-item"
+                                                href="http://localhost/project/banana/display/commandments.php">พระราชบัญญัติการจัดซื้อจัดจ้าง</a>
+                                        </li>
+                                        <li><a class="dropdown-item"
+                                                href="http://localhost/project/banana/display/ministry_regulations.php">ระเบียบกระทรวงการคลัง</a>
+                                        </li>
+                                        <li><a class="dropdown-item"
+                                                href="http://localhost/project/banana/display/rule.php">กฏกระทรวง</a>
+                                        </li>
+                                        <li><a class="dropdown-item"
+                                                href="http://localhost/project/banana/display/inform.php">ประกาศ</a>
+                                        </li>
+                                        <li><a class="dropdown-item"
+                                                href="http://localhost/project/banana/display/book.php">หนังสือเรียน /
+                                                แนวทางการปฏิบัติ</a></li>
                                         <li><a class="dropdown-item"
                                                 href="http://localhost/project/banana/display/structure.php">โครงสร้างผู้รับผิดชอบในการจัดซื้อจัดจ้างของ
                                                 สปสช.</a></li>
@@ -170,12 +218,12 @@ session_start();
                         </li>
 
 
-                
 
 
 
-                <li class="nav-item"><a class="nav-link" href="contact.html">ติดต่อเรา</a></li>
-                <?php
+
+                        <li class="nav-item"><a class="nav-link" href="contact.html">ติดต่อเรา</a></li>
+                        <?php
 
                         if(isset($_SESSION['us_email'])) {
     //     echo "<script>
@@ -188,21 +236,23 @@ session_start();
             $row = $result->fetch_assoc();
             ?>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdown-a"
-                        data-toggle="dropdown"><?php echo $row['us_email']?></a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown-a">
-                        <a class="dropdown-item" href="http://localhost/project/banana/logout/logout.php">ออกจากระบบ</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown-a"
+                                data-toggle="dropdown"><?php echo $row['us_email']?></a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown-a">
+                                <a class="dropdown-item"
+                                    href="http://localhost/project/banana/logout/logout.php">ออกจากระบบ</a>
 
-                        <?php
+                                <?php
     }
     if(!isset($_SESSION['us_email'])) {
     ?>
-                <li class="nav-item"><a class="nav-link" href="http://localhost/project/banana/login/index.php">เข้าสู่ระบบ</a></li>
-                <?php
+                        <li class="nav-item"><a class="nav-link"
+                                href="http://localhost/project/banana/login/index.php">เข้าสู่ระบบ</a></li>
+                        <?php
     }
     ?>
-</div>
+                </div>
             </div>
 
             </ul>

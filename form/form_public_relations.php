@@ -97,7 +97,13 @@ $start = ($page - 1) * $perpage;
                                             <label for="lname">ไฟล์</label>
                                             <div class="form-group">
                                                 <input type="file" class="form-control1" name="pu_file" required
-                                                    data-error="กรุณาเลือกไฟล์">
+                                                    data-error="กรุณาเลือกไฟล์เอกสาร">
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+
+                                            <label for="lname">รูป</label>
+                                            <div class="form-group">
+                                                <input type="file" class="form-control1" name="pu_image" >
                                                 <div class="help-block with-errors"></div>
                                             </div>
 

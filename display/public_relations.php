@@ -24,7 +24,7 @@ $start = ($page - 1) * $perpage;
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Site Metas -->
-    <title>ประกาศแผนการจัดซื้อจัดจ้าง</title>
+    <title>ข่าวประชาสัมพันธ์</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -65,7 +65,7 @@ $start = ($page - 1) * $perpage;
                 <div class="row">
                         <div class="col-lg-12">
                             <div class="heading-title text-center">
-                                <h2>ประกาศแผนการจัดซื้อจัดจ้าง</h2>
+                                <h2>ข่าวประชาสัมพันธ์</h2>
                                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
                             </div>
                         </div>
@@ -93,7 +93,7 @@ $start = ($page - 1) * $perpage;
                                     <td class="column3"><?php echo $fetch['pu_date'] ?></td>
                                     <td class="column4">
                                     <?php $files=$fetch['pu_file']; ?>
-                                    <a download="<?php echo $files ?>" href="../uploads/uploads_public_relations/<?php echo $files ?>">
+                                    <a download="<?php echo $files ?>" href="uploads/<?php echo $files ?>">
                                              <?php echo $fetch['pu_file'] ?>
                                             </td>
                                     
@@ -141,7 +141,8 @@ $start = ($page - 1) * $perpage;
             </div>
             <!-- End About -->
 
-            </article>
+             
+        </article>
     </div>
     <nav>
 <?php include '../lower.php' ?>

@@ -138,134 +138,153 @@ $query = mysqli_query($conn, $sql);
                             <div class="special-menu text-center">
                                 <div class="button-group filter-button-group">
                                     <button class="active" data-filter="*">ทั้งหมด</button>
-                                    <button data-filter=".drinks">ใหม่</button>
-                                    <button data-filter=".lunch">เดือนที่แล้ว</button>
-                                    <button data-filter=".dinner">Dinner</button>
+                                    <button data-filter=".drinks">เดือนที่ผ่านมา</button>
+                                    <button data-filter=".lunch">เดือนนี้</button>
+                                    <button data-filter=".dinner">เดือนที่จะถึง</button>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="row special-list">
-                        <?php while ($row = mysqli_fetch_assoc($query)) {?>
+                        <?php 
+                        $nuble1=0;
+                        while ($row = mysqli_fetch_assoc($query)) {
+                            $tim = date('Y-m-d', strtotime("now"));
+                            $time1 = new DateTime($row['pu_date']);
+                            $date = $time1->format('n');
+                            $time = new DateTime($tim);
+                            $date1 = $time->format('n');
+                            if($date == $date1 - 1){
+                            ?>
                         <div class="col-lg-4 col-md-6 special-grid drinks">
                             <div class="gallery-single">
                                 <?php $files=$row['pu_file']; ?>
-                                <a href="details.php">
-                                    <?php
+
+                                <?php
+
+                            $nuble1=$nuble1+1;
 
 								if (isset($row['pu_image'])) {
 									if (!empty($row['pu_image'])) {
 										echo '<img src="images/' . $row['pu_image'] . '"class="img-fluid" alt="Images" style={height: 50px;}/>';
 									}
-								}
+								}else if (!isset($row['pu_image'])) {
+                                    echo '<img src="images/no_image.png"class="img-fluid2" alt="Images" style={height: 50px; }/>';
+                                }
 							?>
 
-                                    <div class="why-text">
-                                        <h4>เรื่อง : <?php echo $row['pu_topic'] ?></h4>
-                                        <p>วันที่ : <?php echo $row['pu_date'] ?></p>
-                                        <a download="<?php echo $files ?>" href="uploads/<?php echo $files ?>">
-                                            <p>ชื่อไฟล์ : <?php echo $row['pu_file'] ?></p>
-                                        </a>
-                                    </div>
-                            </div>
-                        </div>
-
-                        <?php } ?>
-
-                        <div class="col-lg-4 col-md-6 special-grid drinks">
-                            <div class="gallery-single fix">
-                                <img src="images/img-02.jpg" class="img-fluid" alt="Image">
                                 <div class="why-text">
-                                    <h4>Special Drinks 2</h4>
-                                    <p>Sed id magna vitae eros sagittis euismod.</p>
-                                    <h5> $9.79</h5>
+                                    <h4>เรื่อง : <?php echo $row['pu_topic'] ?></h4>
+                                    <p>วันที่ : <?php echo $row['pu_date'] ?></p>
+                                    <a download="<?php echo $files ?>" href="uploads/<?php echo $files ?>">
+                                        <p>ชื่อไฟล์ : <?php echo $row['pu_file'] ?></p>
+                                    </a>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-md-6 special-grid drinks">
-                            <div class="gallery-single fix">
-                                <img src="images/img-03.jpg" class="img-fluid" alt="Image">
-                                <div class="why-text">
-                                    <h4>Special Drinks 3</h4>
-                                    <p>Sed id magna vitae eros sagittis euismod.</p>
-                                    <h5> $10.79</h5>
-                                </div>
-                            </div>
-                        </div>
+                        <?php 
+                            }
+                        if($nuble1 ==9){
+                        break;
+                        }
+                        }
+                        
+                        $nuble1=0;
+              $sql1= "SELECT * FROM public_relations";
+              $query1 = mysqli_query($conn, $sql1);
+                       while ($row1 = mysqli_fetch_assoc($query1)) {
+                        $tim = date('Y-m-d', strtotime("now"));
+                        $time1 = new DateTime($row1['pu_date']);
+                        $date = $time1->format('n');
+                        $time = new DateTime($tim);
+                        $date1 = $time->format('n');
+                        if($date == $date1){
 
+                            $nuble1=$nuble1+1;
+                            ?>
                         <div class="col-lg-4 col-md-6 special-grid lunch">
                             <div class="gallery-single fix">
-                                <img src="images/img-04.jpg" class="img-fluid" alt="Image">
-                                <div class="why-text">
-                                    <h4>Special Lunch 1</h4>
-                                    <p>Sed id magna vitae eros sagittis euismod.</p>
-                                    <h5> $15.79</h5>
-                                </div>
-                            </div>
-                        </div>
+                                <?php $files=$row1['pu_file']; ?>
 
-                        <div class="col-lg-4 col-md-6 special-grid lunch">
-                            <div class="gallery-single fix">
-                                <img src="images/img-05.jpg" class="img-fluid" alt="Image">
-                                <div class="why-text">
-                                    <h4>Special Lunch 2</h4>
-                                    <p>Sed id magna vitae eros sagittis euismod.</p>
-                                    <h5> $18.79</h5>
-                                </div>
-                            </div>
-                        </div>
+                                <?php
 
-                        <div class="col-lg-4 col-md-6 special-grid lunch">
-                            <div class="gallery-single fix">
-                                <img src="images/img-06.jpg" class="img-fluid" alt="Image">
+                                if (isset($row1['pu_image'])) {
+                                    if (!empty($row1['pu_image'])) {
+                                        echo '<img src="images/' . $row1['pu_image'] . '"class="img-fluid" alt="Images" style={height: 50px;}/>';
+                                    }
+                                }else if (!isset($row1['pu_image'])) {
+                                    echo '<img src="images/no_image.png"class="img-fluid2" alt="Images" style={height: 50px; }/>';
+                                }
+                            ?>
+
                                 <div class="why-text">
-                                    <h4>Special Lunch 3</h4>
-                                    <p>Sed id magna vitae eros sagittis euismod.</p>
-                                    <h5> $20.79</h5>
+                                    <h4>เรื่อง : <?php echo $row1['pu_topic'] ?></h4>
+                                    <p>วันที่ : <?php echo $row1['pu_date'] ?></p>
+                                    <a download="<?php echo $files ?>" href="uploads/<?php echo $files ?>">
+                                        <p>ชื่อไฟล์ : <?php echo $row1['pu_file'] ?></p>
+                                    </a>
                                 </div>
                             </div>
                         </div>
+                        <?php }  
+                        if($nuble1 ==9){
+                        break;
+                        }
+                        }
+                        $nuble1=0;
+                         $sql1= "SELECT * FROM public_relations";
+                         $query1 = mysqli_query($conn, $sql1);
+                                  while ($row1 = mysqli_fetch_assoc($query1)) {
+                                    $tim = date('Y-m-d', strtotime("now"));
+                                    $time1 = new DateTime($row1['pu_date']);
+                                    $date = $time1->format('n');
+                                    $time = new DateTime($tim);
+                                    $date1 = $time->format('n');
+                                    if($date == $date1+1){
+
+                                        $nuble1=$nuble1+1;
+                                    ?>
+
+
 
                         <div class="col-lg-4 col-md-6 special-grid dinner">
                             <div class="gallery-single fix">
-                                <img src="images/img-07.jpg" class="img-fluid" alt="Image">
-                                <div class="why-text">
-                                    <h4>Special Dinner 1</h4>
-                                    <p>Sed id magna vitae eros sagittis euismod.</p>
-                                    <h5> $25.79</h5>
-                                </div>
-                            </div>
-                        </div>
+                                <?php $files=$row1['pu_file']; ?>
 
-                        <div class="col-lg-4 col-md-6 special-grid dinner">
-                            <div class="gallery-single fix">
-                                <img src="images/img-08.jpg" class="img-fluid" alt="Image">
-                                <div class="why-text">
-                                    <h4>Special Dinner 2</h4>
-                                    <p>Sed id magna vitae eros sagittis euismod.</p>
-                                    <h5> $22.79</h5>
-                                </div>
-                            </div>
-                        </div>
+                                <?php
 
-                        <div class="col-lg-4 col-md-6 special-grid dinner">
-                            <div class="gallery-single fix">
-                                <img src="images/img-09.jpg" class="img-fluid" alt="Image">
+if (isset($row1['pu_image'])) {
+    if (!empty($row1['pu_image'])) {
+        echo '<img src="images/' . $row1['pu_image'] . '"class="img-fluid" alt="Images" style={height: 50px;}/>';
+    }
+}else if (!isset($row1['pu_image'])) {
+    echo '<img src="images/no_image.png"class="img-fluid2" alt="Images" style={height: 50px; }/>';
+}
+?>
+
                                 <div class="why-text">
-                                    <h4>Special Dinner 3</h4>
-                                    <p>Sed id magna vitae eros sagittis euismod.</p>
-                                    <h5> $24.79</h5>
+                                    <h4>เรื่อง : <?php echo $row['pu_topic'] ?></h4>
+                                    <p>วันที่ : <?php echo $row['pu_date'] ?></p>
+                                    <a download="<?php echo $files ?>" href="uploads/<?php echo $files ?>">
+                                        <p>ชื่อไฟล์ : <?php echo $row['pu_file'] ?></p>
+                                    </a>
                                 </div>
                             </div>
                         </div>
+                        <?php } 
+                    if($nuble1 ==9){
+                    break;
+                    }} ?>
+
 
 
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 text-center1">
                         <div class="inner-column">
-                            <a class="btn btn-lg btn-circle btn-outline-new-white" href="display/another.php">อ่านเพิ่มเติม</a>
+                            <a class="btn btn-lg btn-circle btn-outline-new-white"
+                                href="display/public_relations.php">อ่านเพิ่มเติม</a>
                         </div>
 
 
@@ -404,29 +423,29 @@ $query = mysqli_query($conn, $sql);
             </div>
             <!-- End Customer Reviews -->
 
-  
+
 
 
         </article>
     </div>
-<nav>
-<?php include 'lower.php' ?>
-</nav>
+    <nav>
+        <?php include 'lower.php' ?>
+    </nav>
 
 
-            <!-- ALL JS FILES -->
+    <!-- ALL JS FILES -->
 
-            <script src="js/jquery-3.2.1.min.js"></script>
-            <script src="js/popper.min.js"></script>
-            <script src="js/bootstrap.min.js"></script>
-            <!-- ALL PLUGINS -->
-            <script src="js/jquery.superslides.min.js"></script>
-            <script src="js/images-loded.min.js"></script>
-            <script src="js/isotope.min.js"></script>
-            <script src="js/baguetteBox.min.js"></script>
-            <script src="js/form-validator.min.js"></script>
-            <script src="js/contact-form-script.js"></script>
-            <script src="js/custom.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- ALL PLUGINS -->
+    <script src="js/jquery.superslides.min.js"></script>
+    <script src="js/images-loded.min.js"></script>
+    <script src="js/isotope.min.js"></script>
+    <script src="js/baguetteBox.min.js"></script>
+    <script src="js/form-validator.min.js"></script>
+    <script src="js/contact-form-script.js"></script>
+    <script src="js/custom.js"></script>
 </body>
 
 </html>

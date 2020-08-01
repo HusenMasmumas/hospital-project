@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 14, 2020 at 06:33 PM
+-- Generation Time: Aug 01, 2020 at 02:23 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.3.18
 
@@ -255,7 +255,7 @@ INSERT INTO `plan` (`pla_id`, `pla_topic`, `pla_date`, `pla_file`) VALUES
 --
 
 CREATE TABLE `public_relations` (
-  `pu_id` int(11) NOT NULL,
+  `pu_id` int(11) NOT NULL COMMENT 'รหัสข่าวประชาสัมพันธ์',
   `pu_topic` varchar(150) COLLATE utf8_thai_520_w2 DEFAULT NULL,
   `pu_image` varchar(255) COLLATE utf8_thai_520_w2 DEFAULT NULL,
   `pu_file` varchar(255) COLLATE utf8_thai_520_w2 DEFAULT NULL,
@@ -268,7 +268,14 @@ CREATE TABLE `public_relations` (
 
 INSERT INTO `public_relations` (`pu_id`, `pu_topic`, `pu_image`, `pu_file`, `pu_date`) VALUES
 (1, 'ข้าราชการผู้มีผลการปฏิบัติราชการอยู่ในระดับดีเด่นและดีมาก', 'img-01.jpg', '1592968201rao2010.pdf', '2020-06-01'),
-(2, 'test', '11.jpg', '1592968201rao2010.pdf', '2020-06-04');
+(2, 'test', '11.jpg', '1592968201rao2010.pdf', '2020-06-04'),
+(3, 'test1', NULL, '15948034401212.txt', '2020-07-15'),
+(4, 'test2', NULL, '15948058511212.txt', '2020-07-15'),
+(9, 'test5', NULL, '15948065181212.txt', '2020-07-15'),
+(16, 'test12', NULL, '15948074281212.txt', '2020-07-15'),
+(18, 'test14', NULL, '15948075971212.txt', '2020-07-15'),
+(20, 'test15', NULL, '15948077021212.txt', '2020-07-15'),
+(22, 'test17', NULL, '15948080211212.txt', '2020-08-15');
 
 -- --------------------------------------------------------
 
@@ -277,7 +284,7 @@ INSERT INTO `public_relations` (`pu_id`, `pu_topic`, `pu_image`, `pu_file`, `pu_
 --
 
 CREATE TABLE `recruitment` (
-  `rec_id` int(11) NOT NULL,
+  `rec_id` int(11) NOT NULL COMMENT 'รหัสการรับสมัครงาน',
   `rec_topic` varchar(150) COLLATE utf8_thai_520_w2 DEFAULT NULL,
   `rec_date` date DEFAULT NULL,
   `rec_file` varchar(150) COLLATE utf8_thai_520_w2 DEFAULT NULL
@@ -357,7 +364,7 @@ INSERT INTO `structure` (`str_id`, `str_topic`, `str_date`, `str_file`) VALUES
 --
 
 CREATE TABLE `the_agenda` (
-  `the_id` int(11) NOT NULL,
+  `the_id` int(11) NOT NULL COMMENT 'รหัสวาระการประชุม',
   `the_topic` varchar(150) COLLATE utf8_thai_520_w2 DEFAULT NULL,
   `the_date` date DEFAULT NULL,
   `the_file` varchar(150) COLLATE utf8_thai_520_w2 DEFAULT NULL
@@ -576,13 +583,13 @@ ALTER TABLE `plan`
 -- AUTO_INCREMENT for table `public_relations`
 --
 ALTER TABLE `public_relations`
-  MODIFY `pu_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `pu_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'รหัสข่าวประชาสัมพันธ์', AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `recruitment`
 --
 ALTER TABLE `recruitment`
-  MODIFY `rec_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `rec_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'รหัสการรับสมัครงาน', AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `results`
@@ -606,7 +613,7 @@ ALTER TABLE `structure`
 -- AUTO_INCREMENT for table `the_agenda`
 --
 ALTER TABLE `the_agenda`
-  MODIFY `the_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `the_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'รหัสวาระการประชุม', AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `user`
